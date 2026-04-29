@@ -1,3 +1,16 @@
+// Load social links from contact.txt
+(function(){
+  fetch('contact.txt')
+    .then(r=>r.json())
+    .then(data=>{
+      const githubLink = document.getElementById('github-link');
+      const linkedinLink = document.getElementById('linkedin-link');
+      if(githubLink && data.github) githubLink.href = data.github;
+      if(linkedinLink && data.linkedin) linkedinLink.href = data.linkedin;
+    })
+    .catch(err=>console.warn('Could not load social links:', err));
+})();
+
 // Live 2x2 payoff visualizer using Plotly
 (function(){
   const ids = ['a00','a01','a10','a11'];

@@ -1,0 +1,4 @@
+{
+  "github": "https://github.com/AayushSo",
+  "linkedin": "https://www.linkedin.com/in/i-am-aayush-soni/"
+}
