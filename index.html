@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2×2 Zero-sum Payoff Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>2×2 Zero-sum Payoff Visualizer</h1>
+      <p class="subtitle">Live interactive payoff contour and Nash equilibrium</p>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Matrix A (Row player's payoffs)</h2>
+        <div class="matrix-wrapper">
+          <div class="matrix-labels-row-left">
+            <span>Player X probability</span>
+          </div>
+          <div class="matrix-container">
+            <div class="matrix">
+              <div class="cell"><input id="a00" type="number" step="any" value="3"></div>
+              <div class="cell"><input id="a01" type="number" step="any" value="0"></div>
+              <div class="cell"><input id="a10" type="number" step="any" value="5"></div>
+              <div class="cell"><input id="a11" type="number" step="any" value="1"></div>
+            </div>
+            <div class="matrix-labels-row">
+              <span>Player Y probability</span>
+            </div>
+          </div>
+        </div>
+        <div class="preset-buttons" aria-label="Preset matrices">
+          <button type="button" data-preset="matching-pennies">Classic Mixed Strategy</button>
+          <button type="button" data-preset="saddle-point">Saddle Point</button>
+          <button type="button" data-preset="dominated">Strictly Dominated</button>
+          <button type="button" data-preset="default">Reset</button>
+        </div>
+        <p class="hint">Change any value — the plot updates instantly.</p>
+
+        <div id="info" class="info" aria-live="polite">
+          <strong>Optimal solution / reward</strong>
+          <div id="info-body" class="info-body">—</div>
+        </div>
+      </section>
+
+      <section class="panel plot">
+        <div id="plotly"></div>
+        <div id="case-note" class="case-note" hidden></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built with vanilla HTML/CSS/JS and Plotly.js — works on GitHub Pages.</small>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
